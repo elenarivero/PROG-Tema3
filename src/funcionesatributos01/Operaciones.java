@@ -17,5 +17,4 @@ public class Operaciones {
 		return num1 + num2;
 	}
 	
-	
 }
