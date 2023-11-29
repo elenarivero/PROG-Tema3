@@ -4,21 +4,22 @@ public class Persona {
 	String nombre = "";
 	int edad = 0;
 	double altura = 0;
-	
-	public Persona() {
-		
-	}
-	
-	public Persona(String nombre, int age, double height) {
+	static String diaSemana;
+			
+	public Persona(String nombre, int edad, double altura) {
 		this.nombre = nombre;
-		edad = age;
-		altura = height;
+		this.edad = edad;
+		this.altura = altura;
+	}
+
+	public void cumpleAños() {
+		edad++;
 	}
 	
-	public static void tresSaludos() {
-		for(int i=1; i<=3; i++) {
-			System.out.println("Hola");
-		}
+	public static void saludo() {
+		System.out.println("Hola");
 	}
+
+
 }
 

@@ -3,7 +3,12 @@ package clases;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println(Sobrecarga.suma(3, 6, 7));
+		final int CONSTANTE = 5;
+		Persona p1 = new Persona("Pepe", 18, 1.8);
+		
+		System.out.println(p1.altura);
+		System.out.println(Persona.diaSemana);
+		System.out.println(p1.edad);
 
 	}
 

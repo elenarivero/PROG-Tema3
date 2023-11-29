@@ -21,6 +21,11 @@ public class Main {
 		anyo = sc.nextInt();
 		
 		esCorrecta = CompruebaFecha.esFechaCorrecta(dia, mes, anyo);
+		if(esCorrecta) {
+			System.out.println("La fecha es correcta");
+		} else {
+			System.out.println("La fecha no es correcta");
+		}
 		
 		sc.close();
 
