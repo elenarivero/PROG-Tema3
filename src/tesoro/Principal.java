@@ -8,7 +8,6 @@ public class Principal {
 	public static void main(String[] args) {
 		// Primer paso: generar posición del tesoro
 		Tesoro.generaPosicionTesoro();
-		
 		// Creamos el objeto
 		Tesoro tesoro = new Tesoro();
 		

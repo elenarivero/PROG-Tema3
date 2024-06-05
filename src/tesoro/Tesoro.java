@@ -2,40 +2,46 @@ package tesoro;
 
 import java.util.Random;
 
+/**
+ * Clase que representa el juego de encuentra el tesoro
+ * 
+ */
 public class Tesoro {
-	// Constante para indicar el tamaño del tablero
+	/**
+	 * Constante que reprsenta el tamaño del tablero
+	 */
 	public static final int TAM_TABLERO = 5;
 
-	// Atributo que almacena la posición X del Tesoro
+	/**
+	 * Posición x del Tesoro
+	 */
 	static int xTesoro;
 
-	// Atributo que almacena la posición Y del Tesoro
+	/**
+	 * Posición y del Tesoro
+	 */
 	static int yTesoro;
 
-	// Atributo que almacena la posición X del Jugador
+	/**
+	 * Posición x del Jugador
+	 */
 	int xJugador = 1;
 
-	// Atributo que almacena la posición Y del Jugador
+	/**
+	 * Posición y del Jugador
+	 */
 	int yJugador = 1;
 
-	// Entrada: Vacía
-	// Salida: Vacía
-	// Funcionalidad: Generar número aletorio entre 1
-	// tamaño + 1 si vamos a utilizar Random
+	/**
+	 * Genera dos números aleatorios que se corresponderán con la X y la Y
+	 * del Tesoro
+	 */
 	static void generaPosicionTesoro() {
 		Random rand = new Random();
 		xTesoro = rand.nextInt(1, TAM_TABLERO + 1);
 		yTesoro = rand.nextInt(1, TAM_TABLERO + 1);
 	}
 
-	// Entrada: vacía
-	// Salida: vacía
-	// Funcionalidad: Un primer for para la primera línea
-	// Otra bucle para pintar los números de las líneas
-	// Si la posición X del Jugador coincide con la línea
-	// creo otro for para imprimir los tabuladores que hay
-	// antes del jugador. El número de tabuladores coincide
-	// con la posición Y del Jugador
 	void pintaTablero() {
 		// Imprimimos la primera línea de números
 		for (int i = 1; i <= TAM_TABLERO; i++) {
@@ -63,9 +69,15 @@ public class Tesoro {
 		}
 	}
 
-	// Entrada: String con el movimiento
-	// Salida: int
-	// 
+	/**
+	 * A partir de una cadena mueve al jugador de posición 
+	 * @param movimiento Cadena que indicará el movimiento del jugador. Los valores
+	 *                   permitidos son "ARRIBA", "ABAJO","IZQUIERDA", "DERECHA"
+	 * @return Devolverá 0 si el movimiento es correcto y modificará las posiciones
+	 *         X e Y del Jugador <br>
+	 *         Devolverá -1 si el movimiento implica salirse del tablero <br>
+	 *         Devolverá -2 si la cadena introducida es errónea
+	 */
 	int mueveJugador(String movimiento) {
 		int res = 0;
 		String movMinuscula = movimiento.toLowerCase();
@@ -102,18 +114,19 @@ public class Tesoro {
 		default:
 			res = -2;
 			break;
-		}		
-		
+		}
+
 		return res;
 	}
 
-	// Entrada: Vacía
-	// Salida: boolean
-	// Funcionalidad: si X del Jugador es igual a x del Tesoro
-	// y Y del Jugador es igual a Y del Tesoro devuelve true
-	boolean buscaTesoro(){
+	/**
+	 * Indica si el jugador ha encontrado el tesoro
+	 * @return true si la posición del jugador coincide con la del tesoro<br>
+	 * false si la posición del jugador no coincide con la del tesoro
+	 */
+	boolean buscaTesoro() {
 		boolean res = false;
-		if(xTesoro == xJugador && yTesoro == yJugador) {
+		if (xTesoro == xJugador && yTesoro == yJugador) {
 			res = true;
 		}
 		return res;

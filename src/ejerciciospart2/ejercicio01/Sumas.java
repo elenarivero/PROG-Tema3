@@ -1,5 +1,8 @@
 package ejerciciospart2.ejercicio01;
 
+/**
+ * Clase para calcular las sumas
+ */
 public class Sumas {
 
 	public static int suma(int num1, int num2) {
